@@ -1,0 +1,77 @@
+<template>
+  <div :class="calcWrapClass">
+    <template v-if="type.match(/catalog/)">
+      <img v-bind:src="item.img" width="300" height="200" v-bind:alt="item.product_name" />
+      <div class="desc">
+        <h1>{{ item.product_name }}</h1>
+        <p>{{ item.price}}$</p>
+        <button class="buy-btn" name="buy-btn" @click="$parent.addItem(item)">Купить</button>
+      </div>
+    </template>
+
+    <template v-else-if="type === 'cart'">
+      <img v-bind:src="item.img" width="100" height="80" v-bind:alt="item.product_name" />
+      <div class="product-desc">
+        <p class="product-title">{{ item.product_name }}</p>
+        <p class="product-quantity">{{ item.quantity }}</p>
+        <p class="product-single-price">{{ item.price }}$</p>
+      </div>
+      <div class="right-block">
+        <button name="del-btn" class="del-btn" @click="$emit('deleteitem', item)">&times;</button>
+      </div>
+    </template>
+
+    <template v-else-if="type === 'temp'">
+      <img src="https://via.placeholder.com/300x200" alt="no img" class="pointer" />
+      <div class="desc w-100">
+        <label>
+          <input
+            type="text"
+            placeholder="Item name"
+            v-model="newProduct.product_name"
+            class="w-100"
+          />
+        </label>
+        <label>
+          <input type="number" placeholder="Item price" v-model="newProduct.price" class="w-100" />
+        </label>
+        <button class="buy-btn" name="buy-btn" @click="createNew(newProduct)">Добавить</button>
+      </div>
+    </template>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    item: { type: Object },
+    type: { type: String, default: "catalog" }
+  },
+  data() {
+    return {
+      newProduct: {
+        product_name: "",
+        price: 0,
+        img: "https://via.placeholder.com/300x200"
+      }
+    };
+  },
+  computed: {
+    calcWrapClass() {
+      return this.type.match(/catalog|temp/) ? "product-item" : "cart--item";
+    }
+  },
+  methods: {
+    createNew(item) {
+      if (item.product_name && item.price && item.img) {
+        this.$emit("createnew", item); //событие сгенерировано
+        this.newProduct.product_name = "";
+        this.newProduct.price = 0;
+        this.newProduct.img = "";
+      }
+    }
+  }
+};
+</script>
+<style lang="less">
+</style>

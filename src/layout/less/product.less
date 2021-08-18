@@ -1,0 +1,43 @@
+.product {
+    column-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, @width);
+    grid-template-rows: 1fr;
+    padding: 80px;
+    justify-content: space-between;
+
+    &-item {
+        .flex(flex, space-between, column);
+        width: @width;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 20px 0;
+
+        .desc {
+            border: 1px solid #c0c0c040;
+            padding: 15px;
+
+            & h1 {
+                font-size: 1em;
+            }
+
+            .buy-btn {
+                margin-top: 5px;
+                background-color: @color-hover;
+                padding: 5px 15px;
+                border: 1px solid transparent;
+                color: @color;
+                border-radius: 5px;
+                transition: all ease-in-out .4s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: @color;
+                    color: @color-hover;
+                    border: 1px solid @color-hover;
+                }
+            }
+        }
+    }
+
+}
