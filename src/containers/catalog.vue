@@ -13,7 +13,7 @@ export default {
     return {
       items: [],
       filteredItems: [],
-      url: "/api/catalog/"
+      url: "api/catalog"
     };
   },
   methods: {

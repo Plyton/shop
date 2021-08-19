@@ -1,5 +1,6 @@
 <template>
   <div class="cart-block">
+
     <div class="d-flex">
       <strong class="d-block">Всего товаров:</strong>
       <div id="quantity">{{calcTotal()}}</div>
@@ -23,6 +24,7 @@
       <strong class="d-block">Общая ст-ть:</strong>
       <div id="price">{{ calcSum() }}$</div>
     </div>
+    
   </div>
 </template>
 
@@ -32,7 +34,7 @@ export default {
   components: { Item },
   data() {
     return {
-      url: "/api/cart/",
+      url: "api/cart",
       items: []
     };
   },

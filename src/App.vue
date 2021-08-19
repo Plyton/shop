@@ -5,7 +5,6 @@
   }">
     <header>
       <div class="logo">ER-shop</div>
-
       <div class="cart">
         <Search ref="searchComponentRef" />
         <button class="btn-cart" @click="show=!show">Cart</button>
@@ -68,7 +67,7 @@ export default {
 <style lang="less">
 body {
   font-family: "SF Pro Display", sans-serif;
-  
+
   div {
     .small {
       font-size: 1em;

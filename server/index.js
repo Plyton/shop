@@ -7,7 +7,6 @@ let catalog = require('./services/catalog.js');
 let cart = require('./services/cart.js');
 let writer = require('./utils/writer.js');
 
-
 server.use(express.json());
 
 server.get('/', (req, res) => {

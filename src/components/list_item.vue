@@ -1,5 +1,6 @@
 <template>
   <div :class="calcWrapClass">
+    
     <template v-if="type.match(/catalog/)">
       <img v-bind:src="item.img" width="300" height="200" v-bind:alt="item.product_name" />
       <div class="desc">
