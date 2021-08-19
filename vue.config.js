@@ -9,7 +9,7 @@ module.exports = {
         port: 8080,
         proxy: {
             '/api': {
-                target: 'https://dry-sierra-16806.herokuapp.com/',
+                target: 'http://localhost:80/',
                 pathRewrite: { '^/api': '' },
                 secure: false,
                 changeOrigin: true,

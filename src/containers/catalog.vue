@@ -21,10 +21,11 @@ export default {
       this.$parent.$refs.cartRef.addItem(item);
     },
 
+// товар можно добваить в каталог локально 
     addNewCatalogItem(prod) {
       let newItem = JSON.parse(JSON.stringify(prod));
       newItem.price = Number(newItem.price);
-      this.$parent.post(this.url, newItem).then(res => {
+      this.$parent.post('api/catalog/', newItem).then(res => {
         if (res.id) {
           this.items.push({
             id_product: res.id,
