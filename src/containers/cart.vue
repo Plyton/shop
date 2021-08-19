@@ -34,7 +34,7 @@ export default {
   components: { Item },
   data() {
     return {
-      url: "api/cart",
+      url: "https://dry-sierra-16806.herokuapp.com/cart/",
       items: []
     };
   },

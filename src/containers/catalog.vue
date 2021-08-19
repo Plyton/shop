@@ -13,7 +13,7 @@ export default {
     return {
       items: [],
       filteredItems: [],
-      url: "api/catalog"
+      url: "https://dry-sierra-16806.herokuapp.com/catalog/"
     };
   },
   methods: {
