@@ -38,7 +38,7 @@ export default {
     },
 
     filter(str) {
-      if (str) {
+            if (str) {
         this.filteredItems = this.items.filter(el =>
           el.product_name.toLowerCase().includes(str.toLowerCase())
         );

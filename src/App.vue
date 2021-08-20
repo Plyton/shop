@@ -67,6 +67,7 @@ export default {
 <style lang="less">
 body {
   font-family: "SF Pro Display", sans-serif;
+  min-width: 350px;
 
   div {
     .small {

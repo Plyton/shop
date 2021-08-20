@@ -6,6 +6,10 @@
     padding: 80px;
     justify-content: space-between;
 
+    @media (max-width:@mobile) {
+        justify-content: center;
+    }
+
     &-item {
         .flex(flex, space-between, column);
         width: @width;
@@ -16,6 +20,7 @@
         .desc {
             border: 1px solid #c0c0c040;
             padding: 15px;
+            text-align: center;
 
             & h1 {
                 font-size: 1em;

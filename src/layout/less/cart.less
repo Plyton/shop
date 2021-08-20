@@ -6,6 +6,10 @@
         margin-right: 50px;
         display: inline-block;
 
+        @media (max-width:@mobile) {
+            margin-right: 35px;
+        }
+
         .search-field {
             box-sizing: border-box;
             width: @width;
@@ -14,6 +18,10 @@
             background-color: transparent;
             border: none;
             border-bottom: 2px solid @color;
+
+            @media (max-width:@mobile) {
+                width: @width - 60px;
+            }
 
             &:focus {
                 outline: none;
@@ -77,6 +85,10 @@
         padding: 20px;
         color: black;
         width: 300px;
+
+        @media (max-width:@mobile) {
+            padding: 10px;
+        }
 
         &:before {
             content: '';
